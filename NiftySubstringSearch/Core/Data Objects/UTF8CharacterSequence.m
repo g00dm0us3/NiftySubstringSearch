@@ -16,53 +16,12 @@
 
 @implementation UTF8CharacterSequence
 
-- (instancetype)init
-{
-    [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Not implemented" userInfo:nil] raise];
-    return nil;
-}
-
 + (instancetype)sequenceWithString:(NSString *)string
 {
     return [[UTF8CharacterSequence alloc] initWithString:string];
 }
-- (instancetype)initWithString:(NSString *)string
-{
-    self = [super init];
 
-    if (self) {
-        BOOL canBeConverted = [string canBeConvertedToEncoding:NSUTF8StringEncoding];
-
-        if (!canBeConverted) {
-            [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Provided nsstring cannot be coverted to UTF-8 sequence, loslessly." userInfo:nil]raise];
-        }
-
-        _length = [string lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
-
-        NSUInteger bufferLength = _length + 1;
-
-        byteArray = (char *)malloc(bufferLength*sizeof(char));
-
-        [string getCString:byteArray maxLength:bufferLength encoding:NSUTF8StringEncoding];
-
-        _sequence = byteArray;
-
-    }
-
-    return self;
-}
-
-- (instancetype)initWithBuf:(char *)buf length:(NSUInteger)length
-{
-    self = [super init];
-
-    if (self) {
-        _sequence = buf;
-        _length = length;
-    }
-
-    return self;
-}
+#pragma mark - Public Interface
 
 - (UTF8CharacterSequence *)subsequenceWithRange:(NSRange)range
 {
@@ -95,6 +54,54 @@
     res[self.length] = 0;
 
     return [[UTF8CharacterSequence alloc] initWithBuf:res length:self.length];
+}
+
+#pragma mark - Not Implemented
+
+- (instancetype)init
+{
+    [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Not implemented" userInfo:nil] raise];
+    return nil;
+}
+
+#pragma mark - Private Interface
+
+- (instancetype)initWithString:(NSString *)string
+{
+    self = [super init];
+
+    if (self) {
+        BOOL canBeConverted = [string canBeConvertedToEncoding:NSUTF8StringEncoding];
+
+        if (!canBeConverted) {
+            [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Provided NSString object cannot be coverted to UTF-8 sequence, loslessly." userInfo:nil]raise];
+        }
+
+        _length = [string lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+
+        NSUInteger bufferLength = _length + 1;
+
+        byteArray = (char *)malloc(bufferLength*sizeof(char));
+
+        [string getCString:byteArray maxLength:bufferLength encoding:NSUTF8StringEncoding];
+
+        _sequence = byteArray;
+
+    }
+
+    return self;
+}
+
+- (instancetype)initWithBuf:(char *)buf length:(NSUInteger)length
+{
+    self = [super init];
+
+    if (self) {
+        _sequence = buf;
+        _length = length;
+    }
+
+    return self;
 }
 
 - (char *)allocCharBuf:(NSUInteger)length

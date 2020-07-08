@@ -35,9 +35,52 @@
     }
 }
 
-- (void)testRangeResolution
+- (void)testRangeResolutionExactMatch
 {
-    /// - TODO: write, it.
+    NSString *text = @"abcdefghijklmnopqrstuvwxyz";
+    NSArray<NSString *> *patterns = @[@"abc", @"xyz", @"ijk"];
+    
+    FuzzySubstringSearch *search = [[FuzzySubstringSearch alloc] initWithString:text];
+    
+    for (NSString *p1 in patterns) {
+        NSArray<FuzzySearchResult *> *matches = [search substring:p1 maxEditDistance:0];
+        XCTAssert(matches.count > 0, @"There should be a match!");
+    
+        NSError *error = nil;
+        NSValue *possiblyWrong = [search resolveSuffixFor:matches[0] substring:p1 error:&error];
+    
+        XCTAssert(error == nil, @"There shouldn't be any error!");
+    
+        NSString *resStr = [text substringWithRange:possiblyWrong.rangeValue];
+        XCTAssert([resStr isEqualToString:p1], @"Strings not equal!");
+    }
+}
+
+- (void)testRangeResolutionFuzzyMatch
+{
+    NSString *text = @"aabcdefghijjklmnopqrstuvwxyyz";
+    NSArray<NSString *> *patterns = @[@"abc",@"xyz", @"ijk"];
+    
+    FuzzySubstringSearch *search = [[FuzzySubstringSearch alloc] initWithString:text];
+    
+    for (NSString *p1 in patterns) {
+        NSArray<FuzzySearchResult *> *matches = [search substring:p1 maxEditDistance:1];
+        XCTAssert(matches.count > 0, @"There should be a match!");
+    
+        for(FuzzySearchResult *match in matches)
+        {
+            NSError *error = nil;
+            NSValue *possiblyWrong = [search resolveSuffixFor:match substring:p1 error:&error];
+               
+            XCTAssert(error == nil, @"There shouldn't be any error!");
+       
+    
+            NSString *resStr = [text substringWithRange:possiblyWrong.rangeValue];
+            XCTAssert([resStr editDistanceDP:p1] <= 1, @"Wrong edit distance");
+            //XCTAssert([resStr isEqualToString:p1], @"Strings not equal!");
+            //NSLog(@"%@", resStr);
+        }
+    }
 }
 
 - (void)testSelectRandomElements

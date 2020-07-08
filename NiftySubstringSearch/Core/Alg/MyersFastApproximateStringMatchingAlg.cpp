@@ -4,9 +4,10 @@
 //
 
 #include "MyersFastApproximateStringMatchingAlg.h"
+#include <cassert>
 
 /**
- Based on Gene Myers "A Fast-Bit Vector Algorithm for Approximate String Matching Based on Dynamic Programing"
+ Based on Gene Myers "A Fast Bit-Vector Algorithm for Approximate String Matching Based on Dynamic Programing"
  1999 ACM doi:0004-5411/99/0500-0395
  */
 
@@ -53,10 +54,11 @@ void MyersFastApproximateStringMatchingAlg::precompute(char *pattern, int m)
     P = (WORD *) malloc(b_max * w_bytes);
     M = (WORD *) malloc(b_max * w_bytes);
 
-    Peq = (WORD **) malloc(SIGMA * sizeof(uint64_t *));
+    Peq = (WORD **) malloc(SIGMA * sizeof(WORD *));
     
     for (int c = 0; c < SIGMA; c++) {
-        Peq[c] = (WORD *) calloc(b_max, w_bytes);
+        Peq[c] = (WORD *) malloc(b_max*w_bytes);
+        memset(Peq[c], 0, b_max*w_bytes);
         for (int block = 0; block < b_max; block++) {
             WORD bitPos = (WORD) 1;
             for (int i = block * w; i < (block + 1) * w; ++i) {
@@ -145,11 +147,10 @@ forward_list<SearchResult> *MyersFastApproximateStringMatchingAlg::findPatternIn
         score[b] = (uint32_t)(b + 1) * w;
     }
 
-    int carry;
-
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < length+W; i++) {
         uint8_t c = (uint8_t)text[i];
-        carry = 0;
+        int carry = 0;
+        
         for (int b = 0; b <= y; b++) {
             carry = advanceBlock(b, c, carry);
             score[b] += carry;
@@ -167,24 +168,8 @@ forward_list<SearchResult> *MyersFastApproximateStringMatchingAlg::findPatternIn
         }
 
         if (y == (b_max - 1) && score[y] <= maxEditDistance) {
-            result->push_front(SearchResult(score[y], (uint32_t)i - W));
-        }
-    }
-
-    if (y == (b_max - 1)) {
-        // all blocks are ones, except for the remainding bits
-        WORD Ph = M[y];
-        WORD Mh = P[y];
-        for (int i = 0; i < W; i++) {
-            if (Ph & HIGH_BIT) score[y]++;
-            if (Mh & HIGH_BIT) score[y]--;
-
-            Ph <<= 1;
-            Mh <<= 1;
-
-            if (score[y] <= maxEditDistance) {
-                result->push_front(SearchResult(score[y], (uint32_t)(i - W + length)));
-            }
+            assert(i - W >= 0);
+            result->push_front(SearchResult(score[y], (uint32_t)(i - W)));
         }
     }
 

@@ -10,6 +10,6 @@
 
 - (instancetype)initWithString:(NSString *)string;
 - (NSArray<FuzzySearchResult *> *)substring:(NSString *)string maxEditDistance:(NSUInteger)maxEditDistance;
-- (NSValue *)resolveRangeFor:(FuzzySearchResult *)searchResult substring:(NSString *)substring error:(NSError * _Nullable *)error;
+- (NSValue *)resolveSuffixFor:(FuzzySearchResult *)searchResult substring:(NSString *)substring error:(NSError * _Nullable *)error;
 
 @end
