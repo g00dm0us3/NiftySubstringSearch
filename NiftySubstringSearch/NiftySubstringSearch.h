@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 //! Project version number for NiftySubstringSearch.
-FOUNDATION_EXPORT double NiftySubstringSearchVersionNumber;
+FOUNDATION_EXPORT double NiftySubstringSearchVersionNumber = 1.0;
 
 //! Project version string for NiftySubstringSearch.
-FOUNDATION_EXPORT const unsigned char NiftySubstringSearchVersionString[];
+FOUNDATION_EXPORT const unsigned char NiftySubstringSearchVersionString[] = "1.0";
 
-// In this header, you should import all the public headers of your framework using statements like #import <NiftySubstringSearch/PublicHeader.h>
+#import <NiftySubstringSearch/UTF8CharacterSequence.h>
+#import <NiftySubstringSearch/FuzzySubstringSearch.h>
+#import <NiftySubstringSearch/FuzzySearchResult.h>
 
 

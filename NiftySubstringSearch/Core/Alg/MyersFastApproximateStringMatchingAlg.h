@@ -36,14 +36,14 @@ private:
 
     bool didRun;
 
-    size_t W;
-    size_t b_max;
+    size_t W; // remainder (bits)
+    size_t b_max; // number of blocks
     int w;
     WORD ONE;
     WORD *P;
     WORD *M;
-    WORD **Peq;
-    WORD Mbit;
+    WORD **Peq; // alphabet
+    WORD HIGH_BIT; // highest bit
 
 };
 

@@ -27,8 +27,10 @@
 
     for (int i = 0; i < 100; i++) {
         NSArray<FuzzySearchResult *> *result = [srch substring:@"TC" maxEditDistance:1];
+        int i = 1;
         for (FuzzySearchResult *res in result) {
-            NSLog(@"🤓 Match at position: %li, edit distance: %li", res.position, res.editDistance);
+            XCTAssert(res.editDistance == 1, @"Wrong edit distance!");
+            XCTAssert(res.position == i++, @"Wrong position!");
         }
     }
 }
@@ -51,22 +53,22 @@
         }
     }
 
-    NSUInteger cOfKFromN = 462;  // number of ways to select 5 elements from 11
+    NSUInteger C5of11 = 462;  // number of ways to select 5 elements from 11
     float avgPercentOfUniqueSelectionsGenerated = 0;
 
     for (int j = 0; j < 100; j++) {
         NSUInteger k = 0;
         NSMutableSet<NSString *> *combinations = [NSMutableSet set];
 
-        for (int i = 0; i < cOfKFromN; i++) {
+        for (int i = 0; i < C5of11; i++) { // go over all of the different unordered subsets of size 5 of 11 elements.
             NSArray<NSNumber *> *res = [indicies selectRandomElements:5];
             NSString *rep = [res componentsJoinedByString:@","];
-            if (![combinations containsObject:rep]) {
+            if (![combinations containsObject:rep]) { // since we are selecting uniformly at random, each subset should be encountered ~ once
                 k++;
                 [combinations addObject:rep];
             }
         }
-        float percentOfUniqueSelectionsGenerated = (k/(cOfKFromN*1.0f))*100;
+        float percentOfUniqueSelectionsGenerated = (k/(C5of11*1.0f))*100;
         avgPercentOfUniqueSelectionsGenerated += percentOfUniqueSelectionsGenerated;
     }
 
@@ -119,17 +121,17 @@ static char alphabet[26]  = {'a','b','c','d','e','f','g','h','i','j','k','l','m'
     NSString *str = [self generateRandomText:1000000];
     NSString *sample = [str substringWithRange:NSMakeRange(500, 500)];
 
-    int hits[100];
+    int hits[11];
     FuzzySubstringSearch *search = [[FuzzySubstringSearch alloc] initWithString:str];
-    for (int i = 0; i < 101; i++) {
-        float alpha = i/100.0f;
+    for (int i = 0; i < 11; i++) {
+        float alpha = i/10.0f;
         NSString *maimed = [sample stringWithErrorLevel:alpha];
         NSArray<FuzzySearchResult *> *result = [search substring:maimed maxEditDistance:(NSUInteger)floor(alpha*(maimed.length-1))];
         hits[i] = (int)result.count;
     }
 
-    for (int i = 0; i < 101; i++) {
-        NSLog(@"%f, %i, %f", i/100.0, hits[i], log10(hits[i]));
+    for (int i = 0; i < 11; i++) {
+        NSLog(@"%f, %i, %f", i/10.0, hits[i], log10(hits[i]));
     }
 }
 
@@ -140,18 +142,18 @@ static char alphabet[26]  = {'a','b','c','d','e','f','g','h','i','j','k','l','m'
 
     NSLog(@"String length: %lu", str.length);
 
-    int hits[101];
+    int hits[11];
     FuzzySubstringSearch *search = [[FuzzySubstringSearch alloc] initWithString:str];
-    for (int i = 0; i < 101; i++) {
-        float alpha = i/100.0f;
+    for (int i = 0; i < 11; i += 1) {
+        float alpha = i/10.0f;
         NSString *maimed = [sample stringWithErrorLevel:alpha];
         /// - TODO: return edit distance in the string, as it doesn't always correspond, which results in empty search
         NSArray<FuzzySearchResult *> *result = [search substring:maimed maxEditDistance:(NSUInteger)ceil(alpha*(maimed.length))];
         hits[i] = (int)result.count;
     }
 
-    for (int i = 0; i < 101; i++) {
-        NSLog(@"%f, %i, %f", i/100.0, hits[i], log10(hits[i]));
+    for (int i = 0; i < 11; i++) {
+        NSLog(@"%f, %i, %f", i/10.0, hits[i], log10(hits[i]));
     }
 }
 

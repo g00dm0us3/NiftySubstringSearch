@@ -5,6 +5,11 @@
 
 #include "MyersFastApproximateStringMatchingAlg.h"
 
+/**
+ Based on Gene Myers "A Fast-Bit Vector Algorithm for Approximate String Matching Based on Dynamic Programing"
+ 1999 ACM doi:0004-5411/99/0500-0395
+ */
+
 using namespace std;
 
 #define SIGMA 256
@@ -36,26 +41,26 @@ MyersFastApproximateStringMatchingAlg::~MyersFastApproximateStringMatchingAlg()
     free(Peq);
 }
 
+// pg. 405
 void MyersFastApproximateStringMatchingAlg::precompute(char *pattern, int m)
 {
     size_t w_bytes = sizeof(WORD);
+    
     b_max = DIV_CEIL(m, w);
     W = w * b_max - m;
-    Mbit = ONE << (w - 1);
+    HIGH_BIT = ONE << (w - 1);
 
     P = (WORD *) malloc(b_max * w_bytes);
     M = (WORD *) malloc(b_max * w_bytes);
 
     Peq = (WORD **) malloc(SIGMA * sizeof(uint64_t *));
-
-    uint64_t bitPos;
-
-    for (int c = 0; c < SIGMA; ++c) {
+    
+    for (int c = 0; c < SIGMA; c++) {
         Peq[c] = (WORD *) calloc(b_max, w_bytes);
-        for (int block = 0; block < b_max; ++block) {
-            bitPos = (WORD) 1;
+        for (int block = 0; block < b_max; block++) {
+            WORD bitPos = (WORD) 1;
             for (int i = block * w; i < (block + 1) * w; ++i) {
-                // if we are in last block fill all positions > m with 1 (matches anything)
+                // fill the remainder after the last block with 1 (>m matches anything)
                 if (i >= m || pattern[i] == c) {
                     Peq[c][block] |= bitPos;
                 }
@@ -65,12 +70,14 @@ void MyersFastApproximateStringMatchingAlg::precompute(char *pattern, int m)
     }
 }
 
+// pg. 408
 inline void MyersFastApproximateStringMatchingAlg::initBlock(int b)
 {
     P[b] = (WORD) -1;//Ones
     M[b] = 0;
 }
 
+// pg. 408
 inline int MyersFastApproximateStringMatchingAlg::advanceBlock(int b, uint8_t c, int hIn)
 {
     WORD Pv = P[b];
@@ -91,16 +98,16 @@ inline int MyersFastApproximateStringMatchingAlg::advanceBlock(int b, uint8_t c,
     Ph = Mv | (~(Xh | Pv));
     Mh = Pv & Xh;
 
-    if (Ph & Mbit) {
+    if (Ph & HIGH_BIT) {
         h_out += 1;
     }
-    if (Mh & Mbit) {
+    if (Mh & HIGH_BIT) {
         h_out -= 1;
     }
 
     Ph <<= 1;
     Mh <<= 1;
-    //add 2.
+
     if (hIn < 0) {
         Mh |= ONE;
     } else if (hIn > 0) {
@@ -120,6 +127,7 @@ bool MyersFastApproximateStringMatchingAlg::compareSearchResults(SearchResult &f
     return first.distance < second.distance;
 }
 
+// pg. 409-410
 forward_list<SearchResult> *MyersFastApproximateStringMatchingAlg::findPatternInText(char *text, uint32_t length, uint32_t maxEditDistance)
 {
     if (didRun) {
@@ -142,7 +150,7 @@ forward_list<SearchResult> *MyersFastApproximateStringMatchingAlg::findPatternIn
     for (int i = 0; i < length; i++) {
         uint8_t c = (uint8_t)text[i];
         carry = 0;
-        for (int b = 0; b <= y; ++b) {
+        for (int b = 0; b <= y; b++) {
             carry = advanceBlock(b, c, carry);
             score[b] += carry;
         }
@@ -159,26 +167,22 @@ forward_list<SearchResult> *MyersFastApproximateStringMatchingAlg::findPatternIn
         }
 
         if (y == (b_max - 1) && score[y] <= maxEditDistance) {
-            //matches.push_back(buff + i - W);
             result->push_front(SearchResult(score[y], (uint32_t)i - W));
         }
     }
 
     if (y == (b_max - 1)) {
-        // simplified version of advance_block when Eq vector is ones (Ph = Mv and Mh = Pv)
-        // here we assume input sequence is padded with W all matching wildcard (which is same thing as assuming
-        // Eq vector is all ones)
+        // all blocks are ones, except for the remainding bits
         WORD Ph = M[y];
         WORD Mh = P[y];
-        for (int i = 0; i < W; ++i) {
-            if (Ph & Mbit) score[y]++;
-            if (Mh & Mbit) score[y]--;
+        for (int i = 0; i < W; i++) {
+            if (Ph & HIGH_BIT) score[y]++;
+            if (Mh & HIGH_BIT) score[y]--;
 
             Ph <<= 1;
             Mh <<= 1;
 
             if (score[y] <= maxEditDistance) {
-                //matches.push_back(buff + i - W);
                 result->push_front(SearchResult(score[y], (uint32_t)(i - W + length)));
             }
         }

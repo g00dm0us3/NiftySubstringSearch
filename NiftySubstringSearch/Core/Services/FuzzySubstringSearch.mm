@@ -73,11 +73,16 @@
     return result;
 }
 
--(NSValue *)resolveRangeFor:(FuzzySearchResult *)searchResult substring:(NSString *)substring;
+- (NSValue *)resolveRangeFor:(FuzzySearchResult *)searchResult substring:(NSString *)substring error:(NSError * _Nullable *)error
 {
+    if (substring.length == 0) {
+        (*error) = [NSError errorWithDomain:@"RangeResolution" code:1 userInfo:@{NSLocalizedFailureReasonErrorKey : @"String is empty"}];
+        return nil;
+    }
+    
     UTF8CharacterSequence *reversed = [[UTF8CharacterSequence sequenceWithString:substring] reverse];
     NSUInteger loc = searchResult.position;
-    NSUInteger start = MAX(0, loc-reversed.length-searchResult.editDistance);
+    NSUInteger start = MAX(0, loc+1-reversed.length-searchResult.editDistance);
     NSUInteger len = loc-start+1;
 
     UTF8CharacterSequence *reversedChunk = [[text subsequenceWithRange:NSMakeRange(start, len)] reverse];
@@ -85,13 +90,16 @@
     FuzzySubstringSearch *search = [[FuzzySubstringSearch alloc] initWithSeq:reversedChunk];
     NSArray<FuzzySearchResult *> *results = [search find:reversed maxEditDistance:searchResult.editDistance];
 
-    NSAssert(results.count > 0, @"There MUST be a result");
+    if (results.count == 0) {
+        (*error) = [NSError errorWithDomain:@"RangeResolution" code:2 userInfo:@{NSLocalizedFailureReasonErrorKey : @"String not found"}];
+        return nil;
+    }
 
     NSUInteger distance = ULONG_MAX;
     NSUInteger resultingIndex = ULONG_MAX;
 
     for (FuzzySearchResult *res in results) {
-        NSUInteger startingPosition = (reversedChunk.length - res.position) + start;
+        NSUInteger startingPosition = ((reversedChunk.length - 1) - res.position) + start;
 
         if (loc - startingPosition < distance) {
             distance = loc - startingPosition;

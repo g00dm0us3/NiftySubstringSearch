@@ -3,41 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5EDA7094C6A1152EC9F40869 /* FuzzySubstringSearch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA77C9BD2D2B92A5B085D4 /* FuzzySubstringSearch.mm */; };
-		5EDA71E8CCAB560AAD517C5D /* catcher.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA7A776451F9AD546238DC /* catcher.txt */; };
-		5EDA720E0BB57BCE57604DD0 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7FE2E44F5A99B016495E /* MyersFastApproximateStringMatchingAlg.cpp */; };
-		5EDA721DA7AE7623D3F691A2 /* FuzzySubstringSearch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA77C9BD2D2B92A5B085D4 /* FuzzySubstringSearch.mm */; };
-		5EDA736E6F32CE635383D71F /* NSString+StringWithErrorLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA73748067325AD2800F47 /* NSString+StringWithErrorLevel.m */; };
-		5EDA745AC8FEB0FFA35948AA /* mobydick.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA70EFE48EC408D2760DDF /* mobydick.txt */; };
-		5EDA75CC69FE0815A4B6E4B6 /* catcher.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA7A776451F9AD546238DC /* catcher.txt */; };
-		5EDA76767C128A394604F24A /* mobydick.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA70EFE48EC408D2760DDF /* mobydick.txt */; };
-		5EDA777B25076AB0BB87AE69 /* FuzzySearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7B7B1D45A27B31EF8824 /* FuzzySearchResult.m */; };
-		5EDA778B4B6C046156EAD114 /* FuzzySearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA77E91B8B56B5E2535B59 /* FuzzySearchResult.h */; };
-		5EDA791C20B6B907F5D56E3D /* FuzzySearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7B7B1D45A27B31EF8824 /* FuzzySearchResult.m */; };
-		5EDA79A5DD52D017222AB47E /* MyersFastApproximateStringMatchingAlg.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA735A28F4E59D02836750 /* MyersFastApproximateStringMatchingAlg.h */; };
-		5EDA7CBAC6EDC050E6D8A9B0 /* NSString+EditDistanceDP.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA78B67EFB0D1E8E77B61B /* NSString+EditDistanceDP.m */; };
-		5EDA7E1758C74CC0574618EC /* FuzzySubstringSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA751E3D188FC640001DE7 /* FuzzySubstringSearch.h */; };
-		5EDA7F4ECB75F3F5A8894A27 /* NSArray+SelectRandomElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA792C5AD7BA31855750B5 /* NSArray+SelectRandomElements.m */; };
-		E509CD9A24B4E17F007760CF /* UTF8CHaracterSequenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA765CE509E46E43F5FE5D /* UTF8CHaracterSequenceTests.m */; };
-		E531020124A87FE200307EA2 /* NiftySubstringSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53101F724A87FE200307EA2 /* NiftySubstringSearch.framework */; };
-		E531020624A87FE200307EA2 /* NiftySubstringSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E531020524A87FE200307EA2 /* NiftySubstringSearchTests.m */; };
-		E531020824A87FE200307EA2 /* NiftySubstringSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = E53101FA24A87FE200307EA2 /* NiftySubstringSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E531021624A8809500307EA2 /* UTF8CharacterSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = E531021424A8809500307EA2 /* UTF8CharacterSequence.h */; };
-		E531021724A8809500307EA2 /* UTF8CharacterSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E531021524A8809500307EA2 /* UTF8CharacterSequence.m */; };
-		E531021824A8809500307EA2 /* UTF8CharacterSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E531021524A8809500307EA2 /* UTF8CharacterSequence.m */; };
+		E5A5506724B5A1430047958A /* UTF8CharacterSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E531021524A8809500307EA2 /* UTF8CharacterSequence.m */; };
+		E5A5506824B5A1440047958A /* UTF8CharacterSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E531021524A8809500307EA2 /* UTF8CharacterSequence.m */; };
+		E5A5506924B5A1470047958A /* FuzzySearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7B7B1D45A27B31EF8824 /* FuzzySearchResult.m */; };
+		E5A5506A24B5A1480047958A /* FuzzySearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7B7B1D45A27B31EF8824 /* FuzzySearchResult.m */; };
+		E5A5506B24B5A14A0047958A /* FuzzySearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA77E91B8B56B5E2535B59 /* FuzzySearchResult.h */; };
+		E5A5506E24B5A15B0047958A /* MyersFastApproximateStringMatchingAlg.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA735A28F4E59D02836750 /* MyersFastApproximateStringMatchingAlg.h */; };
+		E5A5506F24B5A1600047958A /* FuzzySubstringSearch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA77C9BD2D2B92A5B085D4 /* FuzzySubstringSearch.mm */; };
+		E5A5507024B5A1610047958A /* FuzzySubstringSearch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA77C9BD2D2B92A5B085D4 /* FuzzySubstringSearch.mm */; };
+		E5A5507124B5A1660047958A /* FuzzySubstringSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA751E3D188FC640001DE7 /* FuzzySubstringSearch.h */; };
+		E5A5507224B5A1690047958A /* NiftySubstringSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = E53101FA24A87FE200307EA2 /* NiftySubstringSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5A5507324B5A17B0047958A /* NiftySubstringSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E531020524A87FE200307EA2 /* NiftySubstringSearchTests.m */; };
+		E5A5507524B5A1850047958A /* UTF8CHaracterSequenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA765CE509E46E43F5FE5D /* UTF8CHaracterSequenceTests.m */; };
+		E5A5507624B5A1880047958A /* NSString+EditDistanceDP.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA78B67EFB0D1E8E77B61B /* NSString+EditDistanceDP.m */; };
+		E5A5507724B5A1970047958A /* NSArray+SelectRandomElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA792C5AD7BA31855750B5 /* NSArray+SelectRandomElements.m */; };
+		E5A5507824B5A19C0047958A /* NSString+StringWithErrorLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA73748067325AD2800F47 /* NSString+StringWithErrorLevel.m */; };
+		E5A5507A24B5A1E30047958A /* mobydick.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA70EFE48EC408D2760DDF /* mobydick.txt */; };
+		E5A5507B24B5A1E60047958A /* catcher.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA7A776451F9AD546238DC /* catcher.txt */; };
+		E5B150E124B5A2F000E6D7A8 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7FE2E44F5A99B016495E /* MyersFastApproximateStringMatchingAlg.cpp */; };
+		E5B150E224B5A2F100E6D7A8 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7FE2E44F5A99B016495E /* MyersFastApproximateStringMatchingAlg.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E531020224A87FE200307EA2 /* PBXContainerItemProxy */ = {
+		E5A5505924B59F7B0047958A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E53101EE24A87FE200307EA2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E53101F624A87FE200307EA2;
-			remoteInfo = NiftySubstringSearch;
+			remoteGlobalIDString = E5A5504E24B59F7B0047958A;
+			remoteInfo = NiftySubstringSearchEmbedded;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -57,29 +54,28 @@
 		5EDA7B7B1D45A27B31EF8824 /* FuzzySearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuzzySearchResult.m; sourceTree = "<group>"; };
 		5EDA7ED1B13EAFC1B84E4B61 /* NSString+StringWithErrorLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringWithErrorLevel.h"; sourceTree = "<group>"; };
 		5EDA7FE2E44F5A99B016495E /* MyersFastApproximateStringMatchingAlg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyersFastApproximateStringMatchingAlg.cpp; sourceTree = "<group>"; };
-		E53101F724A87FE200307EA2 /* NiftySubstringSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NiftySubstringSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53101FA24A87FE200307EA2 /* NiftySubstringSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NiftySubstringSearch.h; sourceTree = "<group>"; };
 		E53101FB24A87FE200307EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E531020024A87FE200307EA2 /* NiftySubstringSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiftySubstringSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E531020524A87FE200307EA2 /* NiftySubstringSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NiftySubstringSearchTests.m; sourceTree = "<group>"; };
 		E531020724A87FE200307EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E531021424A8809500307EA2 /* UTF8CharacterSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTF8CharacterSequence.h; sourceTree = "<group>"; };
 		E531021524A8809500307EA2 /* UTF8CharacterSequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTF8CharacterSequence.m; sourceTree = "<group>"; };
+		E5B150E624B5A68000E6D7A8 /* NiftySubstringSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NiftySubstringSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B150E724B5A75800E6D7A8 /* NiftySubstringSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiftySubstringSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E53101F424A87FE200307EA2 /* Frameworks */ = {
+		E5A5504C24B59F7B0047958A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E53101FD24A87FE200307EA2 /* Frameworks */ = {
+		E5A5505424B59F7B0047958A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E531020124A87FE200307EA2 /* NiftySubstringSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,17 +118,9 @@
 			children = (
 				E53101F924A87FE200307EA2 /* NiftySubstringSearch */,
 				E531020424A87FE200307EA2 /* NiftySubstringSearchTests */,
-				E53101F824A87FE200307EA2 /* Products */,
+				E5B150E624B5A68000E6D7A8 /* NiftySubstringSearch.framework */,
+				E5B150E724B5A75800E6D7A8 /* NiftySubstringSearchTests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		E53101F824A87FE200307EA2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E53101F724A87FE200307EA2 /* NiftySubstringSearch.framework */,
-				E531020024A87FE200307EA2 /* NiftySubstringSearchTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		E53101F924A87FE200307EA2 /* NiftySubstringSearch */ = {
@@ -190,55 +178,54 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E53101F224A87FE200307EA2 /* Headers */ = {
+		E5A5504A24B59F7B0047958A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E531021624A8809500307EA2 /* UTF8CharacterSequence.h in Headers */,
-				E531020824A87FE200307EA2 /* NiftySubstringSearch.h in Headers */,
-				5EDA79A5DD52D017222AB47E /* MyersFastApproximateStringMatchingAlg.h in Headers */,
-				5EDA7E1758C74CC0574618EC /* FuzzySubstringSearch.h in Headers */,
-				5EDA778B4B6C046156EAD114 /* FuzzySearchResult.h in Headers */,
+				E5A5506B24B5A14A0047958A /* FuzzySearchResult.h in Headers */,
+				E5A5507224B5A1690047958A /* NiftySubstringSearch.h in Headers */,
+				E5A5507124B5A1660047958A /* FuzzySubstringSearch.h in Headers */,
+				E5A5506E24B5A15B0047958A /* MyersFastApproximateStringMatchingAlg.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E53101F624A87FE200307EA2 /* NiftySubstringSearch */ = {
+		E5A5504E24B59F7B0047958A /* NiftySubstringSearch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E531020B24A87FE200307EA2 /* Build configuration list for PBXNativeTarget "NiftySubstringSearch" */;
+			buildConfigurationList = E5A5506424B59F7B0047958A /* Build configuration list for PBXNativeTarget "NiftySubstringSearch" */;
 			buildPhases = (
-				E53101F224A87FE200307EA2 /* Headers */,
-				E53101F324A87FE200307EA2 /* Sources */,
-				E53101F424A87FE200307EA2 /* Frameworks */,
-				E53101F524A87FE200307EA2 /* Resources */,
+				E5A5504A24B59F7B0047958A /* Headers */,
+				E5A5504B24B59F7B0047958A /* Sources */,
+				E5A5504C24B59F7B0047958A /* Frameworks */,
+				E5A5504D24B59F7B0047958A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = NiftySubstringSearch;
-			productName = NiftySubstringSearch;
-			productReference = E53101F724A87FE200307EA2 /* NiftySubstringSearch.framework */;
+			productName = NiftySubstringSearchEmbedded;
+			productReference = E5B150E624B5A68000E6D7A8 /* NiftySubstringSearch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E53101FF24A87FE200307EA2 /* NiftySubstringSearchTests */ = {
+		E5A5505624B59F7B0047958A /* NiftySubstringSearchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E531020E24A87FE200307EA2 /* Build configuration list for PBXNativeTarget "NiftySubstringSearchTests" */;
+			buildConfigurationList = E5A5506524B59F7B0047958A /* Build configuration list for PBXNativeTarget "NiftySubstringSearchTests" */;
 			buildPhases = (
-				E53101FC24A87FE200307EA2 /* Sources */,
-				E53101FD24A87FE200307EA2 /* Frameworks */,
-				E53101FE24A87FE200307EA2 /* Resources */,
+				E5A5505324B59F7B0047958A /* Sources */,
+				E5A5505424B59F7B0047958A /* Frameworks */,
+				E5A5505524B59F7B0047958A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E531020324A87FE200307EA2 /* PBXTargetDependency */,
+				E5A5505A24B59F7B0047958A /* PBXTargetDependency */,
 			);
 			name = NiftySubstringSearchTests;
-			productName = NiftySubstringSearchTests;
-			productReference = E531020024A87FE200307EA2 /* NiftySubstringSearchTests.xctest */;
+			productName = NiftySubstringSearchEmbeddedTests;
+			productReference = E5B150E724B5A75800E6D7A8 /* NiftySubstringSearchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -250,10 +237,10 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = g00dm0us3;
 				TargetAttributes = {
-					E53101F624A87FE200307EA2 = {
+					E5A5504E24B59F7B0047958A = {
 						CreatedOnToolsVersion = 11.5;
 					};
-					E53101FF24A87FE200307EA2 = {
+					E5A5505624B59F7B0047958A = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
@@ -267,71 +254,71 @@
 				Base,
 			);
 			mainGroup = E53101ED24A87FE200307EA2;
-			productRefGroup = E53101F824A87FE200307EA2 /* Products */;
+			productRefGroup = E53101ED24A87FE200307EA2;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E53101F624A87FE200307EA2 /* NiftySubstringSearch */,
-				E53101FF24A87FE200307EA2 /* NiftySubstringSearchTests */,
+				E5A5504E24B59F7B0047958A /* NiftySubstringSearch */,
+				E5A5505624B59F7B0047958A /* NiftySubstringSearchTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E53101F524A87FE200307EA2 /* Resources */ = {
+		E5A5504D24B59F7B0047958A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EDA76767C128A394604F24A /* mobydick.txt in Resources */,
-				5EDA75CC69FE0815A4B6E4B6 /* catcher.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E53101FE24A87FE200307EA2 /* Resources */ = {
+		E5A5505524B59F7B0047958A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EDA745AC8FEB0FFA35948AA /* mobydick.txt in Resources */,
-				5EDA71E8CCAB560AAD517C5D /* catcher.txt in Resources */,
+				E5A5507A24B5A1E30047958A /* mobydick.txt in Resources */,
+				E5A5507B24B5A1E60047958A /* catcher.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E53101F324A87FE200307EA2 /* Sources */ = {
+		E5A5504B24B59F7B0047958A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E531021724A8809500307EA2 /* UTF8CharacterSequence.m in Sources */,
-				5EDA720E0BB57BCE57604DD0 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */,
-				5EDA721DA7AE7623D3F691A2 /* FuzzySubstringSearch.mm in Sources */,
-				5EDA777B25076AB0BB87AE69 /* FuzzySearchResult.m in Sources */,
+				E5B150E124B5A2F000E6D7A8 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */,
+				E5A5506F24B5A1600047958A /* FuzzySubstringSearch.mm in Sources */,
+				E5A5506724B5A1430047958A /* UTF8CharacterSequence.m in Sources */,
+				E5A5506924B5A1470047958A /* FuzzySearchResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E53101FC24A87FE200307EA2 /* Sources */ = {
+		E5A5505324B59F7B0047958A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E531020624A87FE200307EA2 /* NiftySubstringSearchTests.m in Sources */,
-				E531021824A8809500307EA2 /* UTF8CharacterSequence.m in Sources */,
-				5EDA791C20B6B907F5D56E3D /* FuzzySearchResult.m in Sources */,
-				5EDA7094C6A1152EC9F40869 /* FuzzySubstringSearch.mm in Sources */,
-				E509CD9A24B4E17F007760CF /* UTF8CHaracterSequenceTests.m in Sources */,
-				5EDA7CBAC6EDC050E6D8A9B0 /* NSString+EditDistanceDP.m in Sources */,
-				5EDA7F4ECB75F3F5A8894A27 /* NSArray+SelectRandomElements.m in Sources */,
-				5EDA736E6F32CE635383D71F /* NSString+StringWithErrorLevel.m in Sources */,
+				E5A5506A24B5A1480047958A /* FuzzySearchResult.m in Sources */,
+				E5A5507624B5A1880047958A /* NSString+EditDistanceDP.m in Sources */,
+				E5A5507724B5A1970047958A /* NSArray+SelectRandomElements.m in Sources */,
+				E5A5507824B5A19C0047958A /* NSString+StringWithErrorLevel.m in Sources */,
+				E5B150E224B5A2F100E6D7A8 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */,
+				E5A5507524B5A1850047958A /* UTF8CHaracterSequenceTests.m in Sources */,
+				E5A5507324B5A17B0047958A /* NiftySubstringSearchTests.m in Sources */,
+				E5A5507024B5A1610047958A /* FuzzySubstringSearch.mm in Sources */,
+				E5A5506824B5A1440047958A /* UTF8CharacterSequence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E531020324A87FE200307EA2 /* PBXTargetDependency */ = {
+		E5A5505A24B59F7B0047958A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E53101F624A87FE200307EA2 /* NiftySubstringSearch */;
-			targetProxy = E531020224A87FE200307EA2 /* PBXContainerItemProxy */;
+			platformFilter = maccatalyst;
+			target = E5A5504E24B59F7B0047958A /* NiftySubstringSearch */;
+			targetProxy = E5A5505924B59F7B0047958A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -387,11 +374,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -442,20 +431,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		E531020C24A87FE200307EA2 /* Debug */ = {
+		E5A5506024B59F7B0047958A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D3QFXJL55Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -463,22 +453,24 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NiftySubstringSearch/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = g00dm0us3.NiftySubstringSearch;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E531020D24A87FE200307EA2 /* Release */ = {
+		E5A5506124B59F7B0047958A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D3QFXJL55Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -486,48 +478,57 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NiftySubstringSearch/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = g00dm0us3.NiftySubstringSearch;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		E531020F24A87FE200307EA2 /* Debug */ = {
+		E5A5506224B59F7B0047958A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D3QFXJL55Q;
 				INFOPLIST_FILE = NiftySubstringSearchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = g00dm0us3.NiftySubstringSearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E531021024A87FE200307EA2 /* Release */ = {
+		E5A5506324B59F7B0047958A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D3QFXJL55Q;
 				INFOPLIST_FILE = NiftySubstringSearchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = g00dm0us3.NiftySubstringSearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -543,20 +544,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E531020B24A87FE200307EA2 /* Build configuration list for PBXNativeTarget "NiftySubstringSearch" */ = {
+		E5A5506424B59F7B0047958A /* Build configuration list for PBXNativeTarget "NiftySubstringSearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E531020C24A87FE200307EA2 /* Debug */,
-				E531020D24A87FE200307EA2 /* Release */,
+				E5A5506024B59F7B0047958A /* Debug */,
+				E5A5506124B59F7B0047958A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E531020E24A87FE200307EA2 /* Build configuration list for PBXNativeTarget "NiftySubstringSearchTests" */ = {
+		E5A5506524B59F7B0047958A /* Build configuration list for PBXNativeTarget "NiftySubstringSearchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E531020F24A87FE200307EA2 /* Debug */,
-				E531021024A87FE200307EA2 /* Release */,
+				E5A5506224B59F7B0047958A /* Debug */,
+				E5A5506324B59F7B0047958A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

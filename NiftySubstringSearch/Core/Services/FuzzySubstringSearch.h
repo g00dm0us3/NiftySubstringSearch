@@ -10,6 +10,6 @@
 
 - (instancetype)initWithString:(NSString *)string;
 - (NSArray<FuzzySearchResult *> *)substring:(NSString *)string maxEditDistance:(NSUInteger)maxEditDistance;
-/// - TODO: batch find
+- (NSValue *)resolveRangeFor:(FuzzySearchResult *)searchResult substring:(NSString *)substring error:(NSError * _Nullable *)error;
 
 @end
