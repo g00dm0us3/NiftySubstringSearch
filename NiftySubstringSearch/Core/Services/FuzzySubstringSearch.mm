@@ -7,6 +7,8 @@
 #import "UTF8CharacterSequence.h"
 #import "FuzzySearchResult.h"
 
+#import "EditDistance.h"
+
 #include "MyersFastApproximateStringMatchingAlg.h"
 
 
@@ -43,48 +45,33 @@
 
 - (NSValue *)resolveSuffixFor:(FuzzySearchResult *)searchResult substring:(NSString *)substring error:(NSError * _Nullable *)error
 {
-    ///- TODO:rewrite
     if (substring.length == 0) {
-        (*error) = [NSError errorWithDomain:@"RangeResolution" code:1 userInfo:@{NSLocalizedFailureReasonErrorKey : @"String is empty"}];
+        (*error) = [NSError errorWithDomain:@"SuffixResolution" code:1 userInfo:@{NSLocalizedFailureReasonErrorKey : @"String is empty"}];
         return nil;
     }
-    
-    UTF8CharacterSequence *reversed = [[UTF8CharacterSequence sequenceWithString:substring] reverse];
+
+    UTF8CharacterSequence *patternBuf = [UTF8CharacterSequence sequenceWithString:substring];
+
     NSUInteger loc = searchResult.position;
-    NSUInteger start = 0;
-    NSUInteger len = loc - start + 1;
-
-    UTF8CharacterSequence *reversedChunk = [[text subsequenceWithRange:NSMakeRange(start, len)] reverse];
-
-    FuzzySubstringSearch *search = [[FuzzySubstringSearch alloc] initWithSeq:reversedChunk];
-    NSArray<FuzzySearchResult *> *results = [search find:reversed maxEditDistance:searchResult.editDistance];
-
-    if (results.count == 0) {
-        (*error) = [NSError errorWithDomain:@"RangeResolution" code:2 userInfo:@{NSLocalizedFailureReasonErrorKey : @"String not found"}];
-        return nil;
-    }
-
-    NSLog(@"%s", reversedChunk.sequence);
+    NSUInteger targetDistance = searchResult.editDistance;
+    NSUInteger minSuffixLength = substring.length - searchResult.editDistance;
+    NSUInteger maxSuffixLength = substring.length + searchResult.editDistance;
     
-    NSUInteger minLength = ULONG_MAX;
-    NSUInteger resultingIndex = ULONG_MAX;
+    for (NSUInteger l = minSuffixLength; l <= maxSuffixLength; l++) {
+        NSUInteger location = loc - l + 1;
+        NSRange rng = NSMakeRange(location, l);
+        NSUInteger dst = [EditDistance editDistanceDP:text textRange:rng pattern:patternBuf];
 
-    for (FuzzySearchResult *res in results) {
-        if (res.editDistance < searchResult.editDistance) continue;
-        
-        NSUInteger startingPosition = ((reversedChunk.length - 1) - res.position) + start;
-        NSUInteger length = loc - startingPosition + 1;
-        
-        
-        if (length < minLength) {
-            minLength = length;
-            resultingIndex = startingPosition;
+        if (dst <= targetDistance) {
+            return [NSValue valueWithRange:rng];
         }
     }
 
-    NSRange result = NSMakeRange(resultingIndex, minLength);
+    (*error) = [NSError errorWithDomain:@"SuffixResolution" code:2 userInfo:
+            @{NSLocalizedDescriptionKey:@"Suffix could not be resolved because the specified substring doesn't appear it the given search position in the text."
+                                        "Make sure, that you are passing the same substring, which was used to obtain the searchResult."}];
 
-    return [NSValue valueWithRange:result];
+    return nil;
 }
 
 #pragma mark - Private Interface

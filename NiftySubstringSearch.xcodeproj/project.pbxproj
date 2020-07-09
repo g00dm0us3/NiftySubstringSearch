@@ -11,11 +11,8 @@
 		E5A5506824B5A1440047958A /* UTF8CharacterSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E531021524A8809500307EA2 /* UTF8CharacterSequence.m */; };
 		E5A5506924B5A1470047958A /* FuzzySearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7B7B1D45A27B31EF8824 /* FuzzySearchResult.m */; };
 		E5A5506A24B5A1480047958A /* FuzzySearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7B7B1D45A27B31EF8824 /* FuzzySearchResult.m */; };
-		E5A5506B24B5A14A0047958A /* FuzzySearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA77E91B8B56B5E2535B59 /* FuzzySearchResult.h */; };
-		E5A5506E24B5A15B0047958A /* MyersFastApproximateStringMatchingAlg.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA735A28F4E59D02836750 /* MyersFastApproximateStringMatchingAlg.h */; };
 		E5A5506F24B5A1600047958A /* FuzzySubstringSearch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA77C9BD2D2B92A5B085D4 /* FuzzySubstringSearch.mm */; };
 		E5A5507024B5A1610047958A /* FuzzySubstringSearch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA77C9BD2D2B92A5B085D4 /* FuzzySubstringSearch.mm */; };
-		E5A5507124B5A1660047958A /* FuzzySubstringSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA751E3D188FC640001DE7 /* FuzzySubstringSearch.h */; };
 		E5A5507224B5A1690047958A /* NiftySubstringSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = E53101FA24A87FE200307EA2 /* NiftySubstringSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E5A5507324B5A17B0047958A /* NiftySubstringSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E531020524A87FE200307EA2 /* NiftySubstringSearchTests.m */; };
 		E5A5507524B5A1850047958A /* UTF8CHaracterSequenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA765CE509E46E43F5FE5D /* UTF8CHaracterSequenceTests.m */; };
@@ -26,6 +23,9 @@
 		E5A5507B24B5A1E60047958A /* catcher.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA7A776451F9AD546238DC /* catcher.txt */; };
 		E5B150E124B5A2F000E6D7A8 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7FE2E44F5A99B016495E /* MyersFastApproximateStringMatchingAlg.cpp */; };
 		E5B150E224B5A2F100E6D7A8 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA7FE2E44F5A99B016495E /* MyersFastApproximateStringMatchingAlg.cpp */; };
+		E5B150ED24B70ED500E6D7A8 /* EditDistanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B150EC24B70ED500E6D7A8 /* EditDistanceTests.m */; };
+		E5B150F124B70FB400E6D7A8 /* EditDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B150EF24B70FB400E6D7A8 /* EditDistance.m */; };
+		E5B150F224B70FB400E6D7A8 /* EditDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B150EF24B70FB400E6D7A8 /* EditDistance.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +62,9 @@
 		E531021524A8809500307EA2 /* UTF8CharacterSequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTF8CharacterSequence.m; sourceTree = "<group>"; };
 		E5B150E624B5A68000E6D7A8 /* NiftySubstringSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NiftySubstringSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B150E724B5A75800E6D7A8 /* NiftySubstringSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiftySubstringSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B150EC24B70ED500E6D7A8 /* EditDistanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditDistanceTests.m; sourceTree = "<group>"; };
+		E5B150EE24B70FB400E6D7A8 /* EditDistance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditDistance.h; sourceTree = "<group>"; };
+		E5B150EF24B70FB400E6D7A8 /* EditDistance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditDistance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,7 @@
 				5EDA7145BC85D16A3A9775AB /* Resources */,
 				5EDA765CE509E46E43F5FE5D /* UTF8CHaracterSequenceTests.m */,
 				5EDA7AB416276B967B9FA82D /* Utility */,
+				E5B150EC24B70ED500E6D7A8 /* EditDistanceTests.m */,
 			);
 			path = NiftySubstringSearchTests;
 			sourceTree = "<group>";
@@ -158,8 +162,8 @@
 		E531021224A8800300307EA2 /* Alg */ = {
 			isa = PBXGroup;
 			children = (
-				5EDA7FE2E44F5A99B016495E /* MyersFastApproximateStringMatchingAlg.cpp */,
-				5EDA735A28F4E59D02836750 /* MyersFastApproximateStringMatchingAlg.h */,
+				E5B150EA24B70E5900E6D7A8 /* Levenstein Edit Distance */,
+				E5B150E924B70E4800E6D7A8 /* Myers */,
 			);
 			path = Alg;
 			sourceTree = "<group>";
@@ -175,6 +179,24 @@
 			path = "Data Objects";
 			sourceTree = "<group>";
 		};
+		E5B150E924B70E4800E6D7A8 /* Myers */ = {
+			isa = PBXGroup;
+			children = (
+				5EDA7FE2E44F5A99B016495E /* MyersFastApproximateStringMatchingAlg.cpp */,
+				5EDA735A28F4E59D02836750 /* MyersFastApproximateStringMatchingAlg.h */,
+			);
+			path = Myers;
+			sourceTree = "<group>";
+		};
+		E5B150EA24B70E5900E6D7A8 /* Levenstein Edit Distance */ = {
+			isa = PBXGroup;
+			children = (
+				E5B150EE24B70FB400E6D7A8 /* EditDistance.h */,
+				E5B150EF24B70FB400E6D7A8 /* EditDistance.m */,
+			);
+			path = "Levenstein Edit Distance";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -182,10 +204,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5A5506B24B5A14A0047958A /* FuzzySearchResult.h in Headers */,
 				E5A5507224B5A1690047958A /* NiftySubstringSearch.h in Headers */,
-				E5A5507124B5A1660047958A /* FuzzySubstringSearch.h in Headers */,
-				E5A5506E24B5A15B0047958A /* MyersFastApproximateStringMatchingAlg.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +310,7 @@
 				E5B150E124B5A2F000E6D7A8 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */,
 				E5A5506F24B5A1600047958A /* FuzzySubstringSearch.mm in Sources */,
 				E5A5506724B5A1430047958A /* UTF8CharacterSequence.m in Sources */,
+				E5B150F124B70FB400E6D7A8 /* EditDistance.m in Sources */,
 				E5A5506924B5A1470047958A /* FuzzySearchResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +327,8 @@
 				E5A5507524B5A1850047958A /* UTF8CHaracterSequenceTests.m in Sources */,
 				E5A5507324B5A17B0047958A /* NiftySubstringSearchTests.m in Sources */,
 				E5A5507024B5A1610047958A /* FuzzySubstringSearch.mm in Sources */,
+				E5B150F224B70FB400E6D7A8 /* EditDistance.m in Sources */,
+				E5B150ED24B70ED500E6D7A8 /* EditDistanceTests.m in Sources */,
 				E5A5506824B5A1440047958A /* UTF8CharacterSequence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

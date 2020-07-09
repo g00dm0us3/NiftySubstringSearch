@@ -73,12 +73,11 @@
             NSValue *possiblyWrong = [search resolveSuffixFor:match substring:p1 error:&error];
                
             XCTAssert(error == nil, @"There shouldn't be any error!");
-       
-    
+
             NSString *resStr = [text substringWithRange:possiblyWrong.rangeValue];
             XCTAssert([resStr editDistanceDP:p1] <= 1, @"Wrong edit distance");
-            //XCTAssert([resStr isEqualToString:p1], @"Strings not equal!");
-            //NSLog(@"%@", resStr);
+
+            NSLog(@"%@", resStr);
         }
     }
 }
@@ -140,21 +139,6 @@
         // k = 𝛂m
         XCTAssert(k == 10*alpha, @"Edit distance should be ⎣𝛂m⎦");
     }
-}
-
-- (void)testEditDistanceDP
-{
-    NSString *text = @"ACTGGA";
-    NSString *pattern = @"GCGGG";
-
-    NSUInteger editDistance = [text editDistanceDP:pattern];
-
-    NSString *t = text;
-    text = pattern;
-    pattern = t;
-    NSUInteger editDistance1 = [text editDistanceDP:pattern];
-    XCTAssert(editDistance1 == editDistance, @"Distance should be symmetric");
-    XCTAssert(editDistance == 3, @"Wrong edit distance");
 }
 
 static char alphabet[26]  = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r','s','t','u','v','w','x','y','z'};
