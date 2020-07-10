@@ -26,6 +26,8 @@
 		E5B150ED24B70ED500E6D7A8 /* EditDistanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B150EC24B70ED500E6D7A8 /* EditDistanceTests.m */; };
 		E5B150F124B70FB400E6D7A8 /* EditDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B150EF24B70FB400E6D7A8 /* EditDistance.m */; };
 		E5B150F224B70FB400E6D7A8 /* EditDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B150EF24B70FB400E6D7A8 /* EditDistance.m */; };
+		E5BA74A424B8724000ACC01E /* SelectRandomElementsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BA74A324B8724000ACC01E /* SelectRandomElementsTests.m */; };
+		E5BA74A624B872BF00ACC01E /* StringWithErrorLevelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BA74A524B872BF00ACC01E /* StringWithErrorLevelTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		E5B150EC24B70ED500E6D7A8 /* EditDistanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditDistanceTests.m; sourceTree = "<group>"; };
 		E5B150EE24B70FB400E6D7A8 /* EditDistance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditDistance.h; sourceTree = "<group>"; };
 		E5B150EF24B70FB400E6D7A8 /* EditDistance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditDistance.m; sourceTree = "<group>"; };
+		E5BA74A324B8724000ACC01E /* SelectRandomElementsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectRandomElementsTests.m; sourceTree = "<group>"; };
+		E5BA74A524B872BF00ACC01E /* StringWithErrorLevelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringWithErrorLevelTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				5EDA765CE509E46E43F5FE5D /* UTF8CHaracterSequenceTests.m */,
 				5EDA7AB416276B967B9FA82D /* Utility */,
 				E5B150EC24B70ED500E6D7A8 /* EditDistanceTests.m */,
+				E5BA74A324B8724000ACC01E /* SelectRandomElementsTests.m */,
+				E5BA74A524B872BF00ACC01E /* StringWithErrorLevelTests.m */,
 			);
 			path = NiftySubstringSearchTests;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				E5A5506A24B5A1480047958A /* FuzzySearchResult.m in Sources */,
 				E5A5507624B5A1880047958A /* NSString+EditDistanceDP.m in Sources */,
 				E5A5507724B5A1970047958A /* NSArray+SelectRandomElements.m in Sources */,
+				E5BA74A424B8724000ACC01E /* SelectRandomElementsTests.m in Sources */,
 				E5A5507824B5A19C0047958A /* NSString+StringWithErrorLevel.m in Sources */,
 				E5B150E224B5A2F100E6D7A8 /* MyersFastApproximateStringMatchingAlg.cpp in Sources */,
 				E5A5507524B5A1850047958A /* UTF8CHaracterSequenceTests.m in Sources */,
@@ -330,6 +337,7 @@
 				E5B150F224B70FB400E6D7A8 /* EditDistance.m in Sources */,
 				E5B150ED24B70ED500E6D7A8 /* EditDistanceTests.m in Sources */,
 				E5A5506824B5A1440047958A /* UTF8CharacterSequence.m in Sources */,
+				E5BA74A624B872BF00ACC01E /* StringWithErrorLevelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +409,8 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = macosx;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -457,8 +465,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = macosx;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

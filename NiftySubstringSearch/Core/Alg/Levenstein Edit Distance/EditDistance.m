@@ -7,7 +7,6 @@
 //
 
 #import "EditDistance.h"
-#import "UTF8CharacterSequence.h"
 
 #define CONDITIONAL_ONE(a,b) (a == b ? 0 : 1)
 
@@ -34,14 +33,14 @@
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Out of ... I forgot the name of that thing. We are out of some important thing!" userInfo:nil] raise];
     }
 
-    uint32  dpMatrix[pattern.length+1][textLength+1]; // holy shit
+    uint32_t  dpMatrix[pattern.length+1][textLength+1];
 
     dpMatrix[0][0] = 0;
-    for (uint32 i = 1; i <= pattern.length; i++) {
+    for (uint32_t i = 1; i <= pattern.length; i++) {
         dpMatrix[i][0] = i;
     }
 
-    for (uint32 j = 1; j <= textLength; j++) {
+    for (uint32_t j = 1; j <= textLength; j++) {
         dpMatrix[0][j] = j;
     }
 

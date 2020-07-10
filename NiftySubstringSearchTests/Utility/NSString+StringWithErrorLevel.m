@@ -41,7 +41,7 @@
     for (NSUInteger i = 0; i < numberOfErrors; i++) {
         NSUInteger index = (NSUInteger) selectedIndicies[i].integerValue;
 
-        uint32 action = arc4random_uniform(2);
+        uint32_t action = arc4random_uniform(2);
 
         if (action == 0) {
             arr[index] = '~'; // delete

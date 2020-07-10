@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UTF8CharacterSequence.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class UTF8CharacterSequence;
 @interface EditDistance : NSObject
 
 + (NSUInteger)editDistanceDP:(UTF8CharacterSequence *)text textRange:(NSRange)textRange pattern:(UTF8CharacterSequence *)pattern;

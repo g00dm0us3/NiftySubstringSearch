@@ -27,10 +27,10 @@
 
     for (int i = 0; i < 100; i++) {
         NSArray<FuzzySearchResult *> *result = [srch substring:@"TC" maxEditDistance:1];
-        int i = 1;
+        int j = 1;
         for (FuzzySearchResult *res in result) {
             XCTAssert(res.editDistance == 1, @"Wrong edit distance!");
-            XCTAssert(res.position == i++, @"Wrong position!");
+            XCTAssert(res.position == j++, @"Wrong position!");
         }
     }
 }
@@ -82,65 +82,6 @@
     }
 }
 
-- (void)testSelectRandomElements
-{
-    NSArray<NSNumber *> *indicies = @[@(7),@(8),@(9),@(10),@(14),@(15),@(16),@(17),@(18),@(19),@(110)];
-
-    for (int i = 0; i < 100; i++) {
-        NSArray<NSNumber *> *res = [indicies selectRandomElements:6];
-        NSMutableSet<NSNumber *> *taken = [NSMutableSet set];
-        for (NSNumber *idx in res) {
-            XCTAssert(![taken containsObject:idx], @"Repetition!");
-            [taken addObject:idx];
-        }
-    }
-
-    NSUInteger C5of11 = 462;  // number of ways to select 5 elements from 11
-    float avgPercentOfUniqueSelectionsGenerated = 0;
-
-    for (int j = 0; j < 100; j++) {
-        NSUInteger k = 0;
-        NSMutableSet<NSString *> *combinations = [NSMutableSet set];
-
-        for (int i = 0; i < C5of11; i++) { // go over all of the different unordered subsets of size 5 of 11 elements.
-            NSArray<NSNumber *> *res = [indicies selectRandomElements:5];
-            NSString *rep = [res componentsJoinedByString:@","];
-            if (![combinations containsObject:rep]) { // since we are selecting uniformly at random, each subset should be encountered ~ once
-                k++;
-                [combinations addObject:rep];
-            }
-        }
-        float percentOfUniqueSelectionsGenerated = (k/(C5of11*1.0f))*100;
-        avgPercentOfUniqueSelectionsGenerated += percentOfUniqueSelectionsGenerated;
-    }
-
-    // should be reasonably close to 100%, since we are aiming to get each possible random selection with the same probability
-
-    avgPercentOfUniqueSelectionsGenerated /= 100;
-
-    XCTAssert(avgPercentOfUniqueSelectionsGenerated >= 98, @"Selection non uniform");
-
-    NSLog(@"%.2f%%", avgPercentOfUniqueSelectionsGenerated);
-}
-
-- (void)testStringWithErrorLevel
-{
-    NSString *text = @"abcdefghij";
-
-    for (int i = 1; i <= 10; i++) {
-        float alpha = i/10.0f;
-        NSString *substring = [text stringWithErrorLevel:alpha];
-        NSUInteger k = [text editDistanceDP:substring];
-        NSLog(@"k : %lu, 𝛂: %f", k, alpha);
-
-        if (k != alpha*10) {
-            NSLog(@"🤬 %@, %@", text, substring);
-        }
-        // k = 𝛂m
-        XCTAssert(k == 10*alpha, @"Edit distance should be ⎣𝛂m⎦");
-    }
-}
-
 static char alphabet[26]  = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r','s','t','u','v','w','x','y','z'};
 
 - (void)testFalsePositiveRateRandomText
@@ -174,7 +115,7 @@ static char alphabet[26]  = {'a','b','c','d','e','f','g','h','i','j','k','l','m'
     for (int i = 0; i < 11; i += 1) {
         float alpha = i/10.0f;
         NSString *maimed = [sample stringWithErrorLevel:alpha];
-        /// - TODO: return edit distance in the string, as it doesn't always correspond, which results in empty search
+        /// - TODO: edit distance in the string, as it doesn't always correspond, which results in empty search
         NSArray<FuzzySearchResult *> *result = [search substring:maimed maxEditDistance:(NSUInteger)ceil(alpha*(maimed.length))];
         hits[i] = (int)result.count;
     }
@@ -233,7 +174,7 @@ static char alphabet[26]  = {'a','b','c','d','e','f','g','h','i','j','k','l','m'
     charBuf[length] = 0;
 
     for (int i = 0; i < length; i++) {
-        uint32 randChar = arc4random_uniform(25);
+        uint32_t randChar = arc4random_uniform(25);
         charBuf[i] = alphabet[randChar];
     }
 

@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 //! Project version number for NiftySubstringSearch.
-FOUNDATION_EXPORT double NiftySubstringSearchVersionNumber = 1.0;
+FOUNDATION_EXPORT double NiftySubstringSearchVersionNumber = 1.1;
 
 //! Project version string for NiftySubstringSearch.
-FOUNDATION_EXPORT const unsigned char NiftySubstringSearchVersionString[] = "1.0";
+FOUNDATION_EXPORT const unsigned char NiftySubstringSearchVersionString[] = "1.1";
 
 #import <NiftySubstringSearch/UTF8CharacterSequence.h>
 #import <NiftySubstringSearch/FuzzySubstringSearch.h>
