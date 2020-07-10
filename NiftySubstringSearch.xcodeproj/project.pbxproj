@@ -28,6 +28,9 @@
 		E5B150F224B70FB400E6D7A8 /* EditDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B150EF24B70FB400E6D7A8 /* EditDistance.m */; };
 		E5BA74A424B8724000ACC01E /* SelectRandomElementsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BA74A324B8724000ACC01E /* SelectRandomElementsTests.m */; };
 		E5BA74A624B872BF00ACC01E /* StringWithErrorLevelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BA74A524B872BF00ACC01E /* StringWithErrorLevelTests.m */; };
+		E5BA74DD24B877AD00ACC01E /* FuzzySearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA77E91B8B56B5E2535B59 /* FuzzySearchResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5BA74DE24B877B500ACC01E /* UTF8CharacterSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = E531021424A8809500307EA2 /* UTF8CharacterSequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5BA74E224B8783400ACC01E /* FuzzySubstringSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDA751E3D188FC640001DE7 /* FuzzySubstringSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,7 +213,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5BA74DE24B877B500ACC01E /* UTF8CharacterSequence.h in Headers */,
+				E5BA74DD24B877AD00ACC01E /* FuzzySearchResult.h in Headers */,
 				E5A5507224B5A1690047958A /* NiftySubstringSearch.h in Headers */,
+				E5BA74E224B8783400ACC01E /* FuzzySubstringSearch.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
