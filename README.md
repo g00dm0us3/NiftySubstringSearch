@@ -21,7 +21,9 @@ P.S. pod is coming shortly.
 In tests:
 /NiftySubstringSearchTests.m contains tests of the algorithm along with some code used to verify some previous results (see the article above).
 
-## Swift Usage Example
+## Usage Example
+
+Myers algorithm searches for all positions j in a text (where we are looking), where for a part of a this text lying in range of indicies [0..j] there is a suffix (some part of a string ending at index j and beggining somewhere before it), which is within a given maximum edit distance from pattern (what we are looking for). Once the location is found, we can lookup a suffix (currently only one out of all possible).
 
 Here is a short sample usage in Swift:
 
@@ -46,3 +48,5 @@ The code above should yield the following output:
 >Possible match at position: 4, with edit distance: 1
 
 >Suffix matching "dde" with edit distance 1: de
+
+However, there are at least two suffixes for position 4 at edit distance 1 from "dde": "de", "cde". This implementation returns only the first one it finds.
