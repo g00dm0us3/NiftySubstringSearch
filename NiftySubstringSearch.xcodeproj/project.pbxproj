@@ -65,7 +65,7 @@
 		E531020724A87FE200307EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E531021424A8809500307EA2 /* UTF8CharacterSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTF8CharacterSequence.h; sourceTree = "<group>"; };
 		E531021524A8809500307EA2 /* UTF8CharacterSequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTF8CharacterSequence.m; sourceTree = "<group>"; };
-		E5B150E624B5A68000E6D7A8 /* NiftySubstringSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NiftySubstringSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B150E624B5A68000E6D7A8 /* NiftySubstringSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NiftySubstringSearch.framework; path = /Users/homer/NiftySubstringSearch/build/Debug/NiftySubstringSearch.framework; sourceTree = "<absolute>"; };
 		E5B150E724B5A75800E6D7A8 /* NiftySubstringSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiftySubstringSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B150EC24B70ED500E6D7A8 /* EditDistanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditDistanceTests.m; sourceTree = "<group>"; };
 		E5B150EE24B70FB400E6D7A8 /* EditDistance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditDistance.h; sourceTree = "<group>"; };
@@ -128,7 +128,6 @@
 			children = (
 				E53101F924A87FE200307EA2 /* NiftySubstringSearch */,
 				E531020424A87FE200307EA2 /* NiftySubstringSearchTests */,
-				E5B150E624B5A68000E6D7A8 /* NiftySubstringSearch.framework */,
 				E5B150E724B5A75800E6D7A8 /* NiftySubstringSearchTests.xctest */,
 			);
 			sourceTree = "<group>";

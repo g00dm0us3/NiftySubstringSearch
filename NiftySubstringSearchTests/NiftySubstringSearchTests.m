@@ -93,7 +93,7 @@ static char alphabet[26]  = {'a','b','c','d','e','f','g','h','i','j','k','l','m'
     FuzzySubstringSearch *search = [[FuzzySubstringSearch alloc] initWithString:str];
     for (int i = 0; i < 11; i++) {
         float alpha = i/10.0f;
-        NSString *maimed = [sample stringWithErrorLevel:alpha];
+        NSString *maimed = sample;
         NSArray<FuzzySearchResult *> *result = [search substring:maimed maxEditDistance:(NSUInteger)floor(alpha*(maimed.length-1))];
         hits[i] = (int)result.count;
     }
@@ -114,7 +114,7 @@ static char alphabet[26]  = {'a','b','c','d','e','f','g','h','i','j','k','l','m'
     FuzzySubstringSearch *search = [[FuzzySubstringSearch alloc] initWithString:str];
     for (int i = 0; i < 11; i += 1) {
         float alpha = i/10.0f;
-        NSString *maimed = [sample stringWithErrorLevel:alpha];
+        NSString *maimed = sample;//[sample stringWithErrorLevel:alpha];
         /// - TODO: edit distance in the string, as it doesn't always correspond, which results in empty search
         NSArray<FuzzySearchResult *> *result = [search substring:maimed maxEditDistance:(NSUInteger)ceil(alpha*(maimed.length))];
         hits[i] = (int)result.count;
