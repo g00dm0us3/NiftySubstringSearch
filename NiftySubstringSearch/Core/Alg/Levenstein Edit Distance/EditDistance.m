@@ -13,7 +13,6 @@
 
 @implementation EditDistance
 
-// - TODO: use Ukkonen's trick to minimize runtime down to O(k⋅min(m,n)) (article: Ukkonen "Approximate String Matching Algorithms")
 + (NSUInteger)editDistanceDP:(UTF8CharacterSequence *)text textRange:(NSRange)textRange pattern:(UTF8CharacterSequence *)pattern
 {
     if (text.length < textRange.location+textRange.length) {
@@ -60,6 +59,8 @@
     return dpMatrix[pattern.length][textLength];
 }
 
+// From Ukkonen "Approximate String Matching Algorithms". Works a lot faster, then naive, for long, almost similar texts.
+// If texts are almost similar, then maxEditDistance can be low, which leads to low runtime (orders of magnitude, in fact). Runtime of alg O(t*min(n,m)), where t is max. edit dst.
 + (NSInteger)fastEditDistance:(UTF8CharacterSequence *)text textRange:(NSRange)textRange pattern:(UTF8CharacterSequence *)pattern {
     NSInteger res = 0;
     NSInteger editDistance = (NSInteger)fabsf((float)textRange.length - (float)pattern.length)+1;
@@ -71,6 +72,7 @@
     
     return res;
 }
+
 
 + (BOOL)internalEditDistanceUkkonen:(UTF8CharacterSequence *)text textRange:(NSRange)textRange pattern:(UTF8CharacterSequence *)pattern maxEditDistance:(NSInteger) maxEditDistance result:(NSInteger * _Nonnull)result {
     
@@ -88,6 +90,7 @@
     NSInteger p = (NSInteger)floor(0.5*(maxEditDistance - fabsf((float)textLength - (float)patternLength)));
     
     // storage
+    // - TODO: get rid of this.
     uint32_t  dpMatrix[pattern.length+1][textLength+1];
     
     for (int i = 0; i <= patternLength; i++) {
@@ -105,6 +108,7 @@
         dpMatrix[0][j] = j;
     }
     
+    // - TODO: finish this
     uint32_t prevColumn[patternLength+1];
     uint32_t nextColumn[patternLength+1];
     
