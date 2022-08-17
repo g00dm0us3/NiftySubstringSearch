@@ -23,7 +23,15 @@ In tests:
 
 ## Usage Example
 
-Myers algorithm searches for all positions j in a text (where we are looking), where for a part of a this text lying in range of indicies [0..j] there is a suffix (some part of a string ending at index j and beggining somewhere before it), which is within a given maximum edit distance from pattern (what we are looking for). Once the location is found, we can lookup a suffix (currently only one out of all possible).
+Myers algorithm is a substring search algorithm, which allows for non-zero edit distance between string and substring. 
+
+To illustrate the idea let's consider a classical substring search problem: given a string (haystack) and a pattern (needle) find one (or all) positions k in a haystack, such that:
+haystack[k..k+n] = needle[0..n]. It's worth noting, that this problem can be solved in O(n) time. It is easy to see that for this problem we need to find exact matche between needle and a portion of the haystack.
+
+However what if we want to allow for some non-exact matches? Say we are looking for a needle "sam" in the haystack "pam", and we are ok if there is no "sam" but there is "pam" (in this case we allow for edit distance to equal 1)? What we coud do is we could take each position in a haystack and calculate edit distance from needle, until we hit our target condition: edit_distance(haystack[k..k+n], needle[0..n]) <= target. The runtime of this algorithm is at least O(n*m^2). Now imagine that your haystack is ~ 10^8 and your needle is ~10^5. You're screwed right? 
+
+Wrong! Myers algorithm to the rescue! Given haystack, needle and target edit distance Myers algorithm will spit out quickly a position j such as:
+in haystack[0..j] there exists a suffix at a given distance from a needle. Now all you need is to resolve is suffix. This is being done under the hood.
 
 Here is a short sample usage in Swift:
 
