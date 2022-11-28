@@ -28,10 +28,11 @@ Myers algorithm is a substring search algorithm, which allows for non-zero edit 
 To illustrate the idea let's consider a classical substring search problem: given a string (haystack) and a pattern (needle) find one (or all) positions k in a haystack, such that:
 haystack[k..k+n] = needle[0..n]. It's worth noting, that this problem can be solved in O(n) time. It is easy to see that for this problem we need to find exact matche between needle and a portion of the haystack.
 
-However what if we want to allow for some non-exact matches? Say we are looking for a needle "sam" in the haystack "pam", and we are ok if there is no "sam" but there is "pam" (in this case we allow for edit distance to equal 1)? What we coud do is we could take each position in a haystack and calculate edit distance from needle, until we hit our target condition: edit_distance(haystack[k..k+n], needle[0..n]) <= target. The runtime of this algorithm is at least O(m*n^2), given the haystack is of length m. That is for each position from [1...m-n], we have to compute edit distance, which takes about O(n^2), if n is the length of a needle. Now imagine that your haystack is ~ 10^8 and your needle is ~10^5. You're screwed right? 
+However what if we want to allow for some non-exact matches? Say we are looking for a needle "sam" in the haystack "pam", and we are ok if there is no "sam" but there is "pam" (in this case we allow for edit distance to equal 1)? What we coud do is we could take each position in a haystack and calculate edit distance from needle, until we hit our target condition: edit_distance(haystack[k..k+n], needle[0..n]) <= target. The runtime of this algorithm is at least O(m*(s*n)), given the haystack is of length m, and s is the edit distance. Now imagine that your haystack is ~ 10^8 and your needle is ~10^5. You're screwed right? 
 
-Wrong! Myers algorithm to the rescue! Given haystack, needle and target edit distance Myers algorithm will spit out quickly a position j such as:
-in haystack[0..j] there exists a suffix at a given distance from a needle. Now all you need is to resolve is suffix. This is being done under the hood.
+Wrong! Myers algorithm to the rescue! Given haystack, needle and a target edit distance Myers algorithm will promptly spit out a position j such as:
+in haystack[0..j] there exists a suffix at a given distance from a needle. While you're imagining all the incredible things you can do given a marvellous tool which does exactly what I told that it does in the previous sentence, allow me to introduce the runtime for such a deed: O(sm/w), where
+there is a new letter w, denoting the number of bits in your arch. Now all you need is to resolve the suffix. This is being done under the hood.
 
 Here is a short sample usage in Swift:
 
